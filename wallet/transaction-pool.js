@@ -7,11 +7,14 @@ class TransactionPool{
         this.transactionMap[transaction.id] = transaction;
     }
 
+    setMap(transactionMap) {
+        this.transactionMap = transactionMap;
+    }
+
     exisitingTransaction({ inputAddress }){
         const transactions = Object.values(this.transactionMap);
 
         return transactions.find(transaction => transaction.input.address === inputAddress);
-        
     }
 }
 
