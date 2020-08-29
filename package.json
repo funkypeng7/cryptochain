@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "open": "open -a \"Google Chrome\" \"https://www.udemy.com/course/build-blockchain-full-stack/learn/\" && code . && ttab -w cd ~/cryptochain && npm run test",
     "test": "jest --watchAll",
     "start": "node index.js",
     "dev": "npm run start-redis && nodemon index.js",
