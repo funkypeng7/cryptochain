@@ -48,16 +48,16 @@ class Transaction {
         const outputTotal = Object.values(outputMap)
             .reduce((total, outputAmount) => total + outputAmount);
         
-            if(amount !== outputTotal) {
-                console.error(`invalid transaction from ${address}`)
-                return false
-            }
+        if(amount !== outputTotal) {
+            console.error(`invalid transaction from ${address}`)
+            return false
+        }
 
-            if(!verifySignature({ publicKey: address, data: outputMap, signature }))
-            {
-                console.error(`invalid signature from ${address}`);
-                return false;
-            }
+        if(!verifySignature({ publicKey: address, data: outputMap, signature }))
+        {
+            console.error(`invalid signature from ${address}`);
+            return false;
+        }
         
 
         return true;
