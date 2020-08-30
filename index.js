@@ -109,7 +109,7 @@ const syncWithRootState = () => {
 const walletFoo = new Wallet();
 const walletBar = new Wallet();
 
-const generateWalletTransaction = ({ wallet, recipient , amount}) => {
+const generateWalletTransaction = ({ wallet, recipient, amount }) => {
     const transaction = wallet.createTransaction({ 
         recipient, amount, chain: blockchain.chain
     });
@@ -118,7 +118,7 @@ const generateWalletTransaction = ({ wallet, recipient , amount}) => {
 };
 
 const walletAction = () => generateWalletTransaction({
-    wallet, recipient: walletFoo.publicKey, amount: 5
+    wallet, recipient: walletFoo.publicKey, amount: 5 
 });
 
 const walletFooAction = () => generateWalletTransaction({
@@ -130,7 +130,7 @@ const walletBarAction = () => generateWalletTransaction({
 });
 
 for (let i=0; i<10; i++) {
-    if(i%3===0) {
+    if(i%3 === 0) {
         walletAction();
         walletFooAction();
     }
